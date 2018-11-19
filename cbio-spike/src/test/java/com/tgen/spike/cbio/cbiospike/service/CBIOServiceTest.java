@@ -1,5 +1,7 @@
-package com.tgen.spike.cbio.cbiospike;
+package com.tgen.spike.cbio.cbiospike.service;
 
+import com.tgen.spike.cbio.cbiospike.parsers.CSVParser;
+import com.tgen.spike.cbio.cbiospike.service.CBIOService;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -69,7 +71,7 @@ public class CBIOServiceTest {
     Assert.assertEquals("All tumor samples that have mRNA, CNA and sequencing data (136 samples)", json.get("case_list_description"));
   }
 
-  @Test
+  @Test //parsing a wide column seems to have issues.
   public void getProfileData() {
     result = cbioService.getProfileData("gbm_tcga_all", "gbm_tcga_mutations", "EGFR+PTEN");
     System.out.println(result);
@@ -77,7 +79,7 @@ public class CBIOServiceTest {
     Assert.assertNotNull(result);
   }
 
-  @Test
+  @Test //tsv parser has issues with web links
   public void getMutationData() {
     result = cbioService.getMutationData("gbm_tcga_mutations", "gbm_tcga_all", "EGFR+PTEN");
     System.out.println(result);

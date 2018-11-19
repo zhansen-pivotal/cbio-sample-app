@@ -1,4 +1,4 @@
-package com.tgen.spike.cbio.cbiospike;
+package com.tgen.spike.cbio.cbiospike.parsers;
 
 import java.io.InputStream;
 import java.io.PushbackInputStream;

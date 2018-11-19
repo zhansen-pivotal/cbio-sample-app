@@ -1,4 +1,4 @@
-package com.tgen.spike.cbio.cbiospike;
+package com.tgen.spike.cbio.cbiospike.service;
 
 import org.springframework.web.client.RestTemplate;
 
